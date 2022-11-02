@@ -1,0 +1,7 @@
+{
+  "name": "Parcial2PM2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
