@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>imagenes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button [routerLink] = "['/home']">
+    Home
+    <ion-icon slot="start" name="home"></ion-icon>
+  </ion-button>
+
+    <ion-item *ngFor="let img of imgs">
+
+      <ion-avatar slot="start" >
+
+        <ion-img [src]="img.url"></ion-img>
+
+      </ion-avatar>
+
+      <ion-label>
+
+        {{img.id}}.
+        {{img.title}}
+
+      </ion-label>
+
+    </ion-item>
+</ion-content>

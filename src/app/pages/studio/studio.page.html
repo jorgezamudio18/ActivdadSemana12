@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>studio</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+
+    <ion-button [routerLink]="['/home']">
+        Home
+        <ion-icon slot="start" name="home"></ion-icon>
+    </ion-button>
+
+    <div class="container">
+        <ul class="list-group">
+            <li *ngFor="let studio of studios" class="list-group-item list-group-item-action"
+                (click)="openForEdit(studio)" [class.active]="studio === selectedStudio">
+                <span class="span-player">{{studio.id}}</span>
+                <span>Nombre: </span> {{studio.nameRedording}} <span> Tipo : </span> {{studio.type}} <span>
+                </span> {{studio.numberCabins}}
+                <span> Dueño : </span> {{studio.owner}}
+            </li>
+
+
+        </ul>
+        <div class="card mt-4">
+            <div class="card-body">
+                <div class="card-title">
+                    insert a recording
+                </div>
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="selectedStudio.nameRedording " placeholder="Insert a Name"
+                        class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="selectedStudio.type " placeholder="Insert Type"
+                        class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="selectedStudio.numberCabins" placeholder="Insert NumberCabins"
+                        class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="selectedStudio.owner" placeholder="Insert Owner"
+                        class="form-control">
+                </div>
+                <button (click)="addOrEdit()" class="btn btn-primary"> Add</button>
+                <button *ngIf="selectedStudio.id !== 0" class="btn btn-danger" (click)="deletePlayer()">Delete</button>
+            </div>
+        </div>
+    </div>
+
+</ion-content>

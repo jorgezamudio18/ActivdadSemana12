@@ -11,6 +11,38 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'create',
+    loadChildren: () => import('./pages/create/create.module').then( m => m.CreatePageModule)
+  },
+  {
+    path: 'detail/:id',
+    loadChildren: () => import('./pages/detail/detail.module').then( m => m.DetailPageModule)
+  },
+  {
+    path: 'singer',
+    loadChildren: () => import('./pages/singer/singer.module').then( m => m.SingerPageModule)
+  },
+  {
+    path: 'imagenes',
+    loadChildren: () => import('./pages/imagenes/imagenes.module').then( m => m.ImagenesPageModule)
+  },
+  {
+    path: 'studio',
+    loadChildren: () => import('./pages/studio/studio.module').then( m => m.StudioPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'recover',
+    loadChildren: () => import('./pages/recover/recover.module').then( m => m.RecoverPageModule)
+  },
 ];
 
 @NgModule({

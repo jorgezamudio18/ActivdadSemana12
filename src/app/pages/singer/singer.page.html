@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>singer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button [routerLink] = "['/home']">
+    Home
+    <ion-icon slot="start" name="home"></ion-icon>
+  </ion-button>
+
+    <div *ngFor="let singer of singers">
+
+      <ion-label> 
+        {{ singer.id }} 
+        {{ singer.name }} 
+        {{ singer.username }} 
+        {{ singer.email }} 
+        {{ singer.address.street }} 
+        {{ singer.address.suite }} 
+        {{ singer.address.city }} 
+        {{ singer.address.zipcode }} 
+      </ion-label>
+      <!-- <ion-label> {{ singer.geo.lat }} </ion-label> -->
+      <!-- <ion-label> {{ singer.geo.lng }} </ion-label> -->
+
+    </div>
+
+</ion-content>
