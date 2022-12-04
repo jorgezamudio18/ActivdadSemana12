@@ -1,7 +1,7 @@
-export interface Geo{
-    albumId:number;
-    id:number;
-    title:string;
-    url:string;
-    thumbnailUrl:string;
+export interface Geo {
+    albumId: number;
+    id: number;
+    title: string;
+    url: string;
+    thumbnailUrl: string;
 }

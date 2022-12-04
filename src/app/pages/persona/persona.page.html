@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>persona</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content>
+    <ion-button [routerLink] = "['/home']">
+      Home
+      <ion-icon slot="start" name="home"></ion-icon>
+    </ion-button>
+    <div class="container">
+      <ul class="list-group">
+          <li *ngFor="let persona of personas" class="list-group-item list-group-item-action"
+              (click)="openForEdit(persona)" [class.active]="persona === selectedPersona">
+              <span class="span-player">{{persona.id}}</span>
+              <span>Nombre: </span> {{persona.nombre}} <span> cocierto : </span> {{persona.concierto}}
+          </li>
+  
+  
+      </ul>
+      <div class="card mt-4">
+          <div class="card-body">
+              <div class="card-title">
+                  insert a Persona
+              </div>
+              <div class="form-group">
+                  <input type="text" [(ngModel)]="selectedPersona.nombre " placeholder="Insert a Name"
+                      class="form-control">
+              </div>
+              <div class="form-group">
+                  <input type="text" [(ngModel)]="selectedPersona.concierto " placeholder="Insert Costo de concierto"
+                      class="form-control">
+              </div>
+              <button (click)="addOrEdit()" class="btn btn-primary"> Add</button>
+              <button *ngIf="selectedPersona.id !== 0" class="btn btn-danger" (click)="deleteConcert()">Delete</button>
+          </div>
+      </div>
+  </div>
+</ion-content>

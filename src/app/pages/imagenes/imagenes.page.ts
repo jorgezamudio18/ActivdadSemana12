@@ -10,7 +10,7 @@ import { FirestoreService } from 'src/app/services/data/firestore.service';
 export class ImagenesPage implements OnInit {
   imgs = [];
 
-  constructor(private firestoreService: FirestoreService) { 
+  constructor(private firestoreService: FirestoreService) {
     this.imgs = this.firestoreService.getImgs();
     console.log (this.imgs);
   }

@@ -43,8 +43,8 @@
                     <input type="text" [(ngModel)]="selectedStudio.owner" placeholder="Insert Owner"
                         class="form-control">
                 </div>
-                <button (click)="addOrEdit()" class="btn btn-primary"> Add</button>
-                <button *ngIf="selectedStudio.id !== 0" class="btn btn-danger" (click)="deletePlayer()">Delete</button>
+                <button (click)="addOrEditStudio()" class="btn btn-primary"> Add</button>
+                <button *ngIf="selectedStudio.id !== 0" class="btn btn-danger" (click)="deleteStudio()">Delete</button>
             </div>
         </div>
     </div>

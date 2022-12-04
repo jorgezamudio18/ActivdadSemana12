@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>concert</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button [routerLink] = "['/home']">
+    Home
+    <ion-icon slot="start" name="home"></ion-icon>
+  </ion-button>
+  <div class="container">
+    <ul class="list-group">
+        <li *ngFor="let concert of concerts" class="list-group-item list-group-item-action"
+            (click)="openForEdit(concert)" [class.active]="concert === selectedConcert">
+            <span class="span-player">{{concert.id}}</span>
+            <span>Nombre: </span> {{concert.name}} <span> Tipo : </span> {{concert.costoconcierto}} <span>
+            </span> {{concert.valor}}
+            <span> Dueño : </span> {{concert.fecha}}
+        </li>
+
+
+    </ul>
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title">
+                insert a recording
+            </div>
+            <div class="form-group">
+                <input type="text" [(ngModel)]="selectedConcert.name " placeholder="Insert a Name"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" [(ngModel)]="selectedConcert.costoconcierto " placeholder="Insert Costo de concierto"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" [(ngModel)]="selectedConcert.valor" placeholder="Insert Valoe"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" [(ngModel)]="selectedConcert.fecha" placeholder="Insert Fecha"
+                    class="form-control">
+            </div>
+            <button (click)="addOrEdit()" class="btn btn-primary"> Add</button>
+            <button *ngIf="selectedConcert.id !== 0" class="btn btn-danger" (click)="deleteConcert()">Delete</button>
+        </div>
+    </div>
+</div>
+</ion-content>

@@ -10,15 +10,34 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-button [routerLink] = "['/singer']">
+  
+<div class="contenedor1">
+  <h1>Canciones</h1>
+  <ion-button class="btn-song" [routerLink] = "['/singer']">
     Cantantes
   </ion-button>
-  <ion-button [routerLink] = "['/imagenes']">
+  <ion-button class="btn-song" [routerLink] = "['/imagenes']">
     Imagenes
   </ion-button>
-  <ion-button [routerLink] = "['/studio']">
+  <ion-button class="btn-song" [routerLink] = "['/studio']">
     Recording Studio
   </ion-button>
+  
+</div>
+
+  <div class="contenedor2">
+    <h1>Conciertos</h1>
+    <button class="btn-concert" [routerLink] = "['/concert']">
+      Crear Concierto 
+    </button> 
+    <button class="btn-concert" [routerLink] = "['/persona']">
+      Agregar Personas
+    </button> 
+    <button class="btn-concert" [routerLink] = "['/asistente']">
+      Crear Asistentes
+    </button> 
+  </div>
+
 
   <ion-card *ngFor="let song of songList | async" routerLink="/detail/{{song.id}}">
     <ion-card-header>

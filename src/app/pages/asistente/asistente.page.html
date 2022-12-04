@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>asistente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button [routerLink] = "['/home']">
+    Home
+    <ion-icon slot="start" name="home"></ion-icon>
+  </ion-button>
+  <div class="container">
+    <ul class="list-group">
+        <li *ngFor="let asistente of asistentes" class="list-group-item list-group-item-action"
+            (click)="openForEdit(asistente)" [class.active]="asistente === selectedAsistente">
+            <span class="span-player">{{asistente.id}}</span>
+            <span>Nombre: </span> {{asistente.nombre}} <span> Concierto : </span> {{asistente.concierto}} <span>
+              Cantidad de personas: 
+            </span> {{asistente.cantidadpersonas}}
+        </li>
+
+
+    </ul>
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title">
+                insert a Asistente
+            </div>
+            <div class="form-group">
+                <input type="text" [(ngModel)]="selectedAsistente.nombre " placeholder="Insert a Name"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" [(ngModel)]="selectedAsistente.concierto " placeholder="Insert Costo de concierto"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" [(ngModel)]="selectedAsistente.cantidadpersonas" placeholder="Insert Valoe"
+                    class="form-control">
+            </div>
+            <button (click)="addOrEdit()" class="btn btn-primary"> Add</button>
+            <button *ngIf="selectedAsistente.id !== 0" class="btn btn-danger" (click)="deleteConcert()">Delete</button>
+        </div>
+    </div>
+</div>
+</ion-content>

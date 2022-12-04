@@ -33,15 +33,23 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'recover',
     loadChildren: () => import('./pages/recover/recover.module').then( m => m.RecoverPageModule)
+  },
+  {
+    path: 'concert',
+    loadChildren: () => import('./pages/concert/concert.module').then( m => m.ConcertPageModule)
+  },
+  {
+    path: 'persona',
+    loadChildren: () => import('./pages/persona/persona.module').then( m => m.PersonaPageModule)
+  },
+  {
+    path: 'asistente',
+    loadChildren: () => import('./pages/asistente/asistente.module').then( m => m.AsistentePageModule)
   },
 ];
 

@@ -11,14 +11,16 @@ export class StudioPage implements OnInit {
 
   ngOnInit() {
   }
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   studios: Studio[] = [
     { id: 1, nameRedording: 'Video', type: 'normal', numberCabins: 6, owner: 'Jorge' }
   ];  //Creando un array
 
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   selectedStudio: Studio = new Studio();
 
 
-  addOrEdit() {
+  addOrEditStudio() {
     if (this.selectedStudio.id === 0) {
       this.selectedStudio.id = this.studios.length + 1;
       this.studios.push(this.selectedStudio);
@@ -29,10 +31,10 @@ export class StudioPage implements OnInit {
     this.selectedStudio = studio;
   }
 
-  deletePlayer() {
+  deleteStudio() {
     if (confirm('Are you sure want to delete it')) {
       // eslint-disable-next-line eqeqeq
-      this.studios = this.studios.filter(x => x != this.selectedStudio)
+      this.studios = this.studios.filter(x => x != this.selectedStudio);
       this.selectedStudio = new Studio();
     }
   }

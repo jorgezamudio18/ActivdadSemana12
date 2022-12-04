@@ -17,20 +17,20 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  async loginUser(event: Event): Promise<void> {
-    event.preventDefault();
-    if (this.loginForm.valid) {
-      const value = this.loginForm.value;
-      this.authService.loginUser(value.email, value.password).then(() => {
-        this.router.navigateByUrl('home');
-      }, async error => {
-        const alert = await this.ac.create({
-          message: error.message, buttons: [{ text: 'OK', role: 'cancel' }],
-        });
-        await alert.present();
-      });
-    }
-  }
+  // async loginUser(event: Event): Promise<void> {
+  //   event.preventDefault();
+  //   if (this.loginForm.valid) {
+  //     const value = this.loginForm.value;
+  //     this.authService.loginUser(value.email, value.password).then(() => {
+  //       this.router.navigateByUrl('home');
+  //     }, async error => {
+  //       const alert = await this.ac.create({
+  //         message: error.message, buttons: [{ text: 'OK', role: 'cancel' }],
+  //       });
+  //       await alert.present();
+  //     });
+  //   }
+  // }
   private buildForm(){
     this.loginForm = this.formBuilder.group({
       emain: ['',[Validators.required, Validators.email]],
